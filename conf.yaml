@@ -1,0 +1,15 @@
+platforms:
+  - name: suplab01
+    platform_type: fuel-devops-http
+    url: 'http://172.19.17.6/env.json'
+    enabled: True
+  - name: suplab02
+    platform_type: fuel-devops-http
+    url: 'http://172.19.17.7/env.json'
+    enabled: True
+  - name: nopelab01
+    platform_type: fuel-devops-http
+    url: 'http://localhost:4/env.json'
+    enabled: True
+
+      
