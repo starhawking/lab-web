@@ -7,9 +7,9 @@ platforms:
     platform_type: fuel-devops-http
     url: 'http://172.19.17.7/env.json'
     enabled: True
-  - name: nopelab01
+  - name: demo-broken-lab
     platform_type: fuel-devops-http
     url: 'http://localhost:4/env.json'
-    enabled: True
+    enabled: Flase
 
       

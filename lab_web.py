@@ -2,6 +2,8 @@ from flask import Flask
 from flask import render_template
 import requests
 import yaml
+import os
+import logging
 
 app = Flask(__name__)
 
@@ -16,6 +18,15 @@ def utility_processor():
     return dict(state_to_friendly=state_to_friendly)
 
 def read_conf(conf='conf.yaml'):
+    full_p =  os.path.join(app.root_path, conf)
+    if os.path.isfile(conf):
+        conf=conf
+    elif os.path.isfile(full_p):
+        conf = full_p
+    else:
+        conf = '/var/www/lab-web/conf.yaml'
+        logging.warning('Falling back to hard-coded config file {}'.format(conf))
+                    
     with open(conf) as f:
         conf_items = yaml.load(f)
     return conf_items
